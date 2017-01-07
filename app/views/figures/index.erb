@@ -1,0 +1,4 @@
+<h1>Historical New York Figures</h1>
+<% @figures.each do |figure| %>
+  <%= erb :'figures/_figure', locals: {figure: figure} %>
+<% end %>

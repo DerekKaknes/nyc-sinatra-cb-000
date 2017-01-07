@@ -1,0 +1,21 @@
+<h1>Create a New Figure</h1>
+<form method="POST" action="/figures">
+  <label>Figure Name:</label>
+  <br></br>
+  <%= erb :'figures/_figure_input', locals: {figure: @figure} %>
+  <br></br>
+  <label>Titles:</label>
+  <br></br>
+  <% Title.all.each do |title| %>
+    <%= erb :'titles/_title_input', locals: {title: title, figure: @figure} %>
+  <% end %>
+  <input type="text" name="title[name]"/>
+  <br></br>
+  <label>Landmarks:</label>
+  <br></br>
+  <% Landmark.all.each do |landmark| %>
+    <%= erb :'landmarks/_landmark_input', locals: {landmark: landmark, figure: @figure} %>
+  <% end %>
+  <input type="text" name="landmark[name]"/>
+  <input type="submit" value="Create Figure"/>
+</form>

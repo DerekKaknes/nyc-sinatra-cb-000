@@ -1,0 +1,4 @@
+<h1><%= @figure.name %></h1>
+<% @figure.titles.each do |title| %>
+  <%= erb :'titles/_title', locals: {title: title} %>
+<% end %>
