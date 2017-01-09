@@ -1,2 +1,2 @@
-<input id="landmark-<%=landmark.id%>" type="checkbox" value="<%=landmark.id%>" name="figure[landmark_ids][]"
+<input id="landmark_<%=landmark.id%>" type="checkbox" value="<%=landmark.id%>" name="figure[landmark_ids][]"
 <%= "checked" if figure.landmarks.include? landmark %>><%=landmark.name%></input>

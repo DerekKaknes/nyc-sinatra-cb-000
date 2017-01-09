@@ -1,5 +1,6 @@
-<h1>Create a New Figure</h1>
-<form method="POST" action="/figures">
+<h1>Edit Existing Figure</h1>
+<form method="POST" action="/figures/<%=@figure.id%>">
+  <input type="hidden" name="_method" value="PATCH"/>
   <label>Figure Name:</label>
   <br></br>
   <%= erb :'figures/_figure_input', locals: {figure: @figure} %>
@@ -17,5 +18,5 @@
     <%= erb :'landmarks/_landmark_input', locals: {landmark: landmark, figure: @figure} %>
   <% end %>
   <input id="new_landmark" type="text" name="landmark[name]" value=""/>
-  <input type="submit" value="Create New Figure"/>
+  <input type="submit" value="Edit Figure"/>
 </form>

@@ -1,4 +1,13 @@
 <h1><%= @figure.name %></h1>
+<h2>Titles:</h2>
 <% @figure.titles.each do |title| %>
   <%= erb :'titles/_title', locals: {title: title} %>
 <% end %>
+<h2>Landmarks:</h2>
+<% @figure.landmarks.each do |landmark| %>
+  <%= erb :'landmarks/_landmark', locals: {landmark: landmark} %>
+<% end %>
+
+<div>
+  <a href = "/figures/<%=@figure.id%>/edit">Edit Figure</a>
+</div>
